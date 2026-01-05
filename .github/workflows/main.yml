@@ -39,3 +39,13 @@ jobs:
         git add reports/
         git diff --staged --quiet || git commit -m "Automated report: $(date -u +'%Y-%m-%d %H:%M UTC')"
         git push
+        
+    - name: Send Slack notification
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      run: |
+        cd $GITHUB_WORKSPACE
+        python src/send_slack_notification.py \
+          "$GITHUB_WORKSPACE/predictions_summary.json" \
+          "$GITHUB_WORKSPACE/trading_signals.json" \
+          "https://github.com/${{ github.repository }}/tree/main/reports/latest"
