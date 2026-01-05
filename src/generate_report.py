@@ -26,9 +26,10 @@ def create_report_folders():
     year = now.strftime('%Y')
     month = now.strftime('%m')
     day = now.strftime('%d')
+    time_folder = now.strftime('%H-%M')  # e.g., "07-53"
     
-    # Create dated folder structure
-    dated_dir = os.path.join(reports_dir, year, month, day)
+    # Create individual report folder: reports/YYYY/MM/DD/HH-MM/
+    dated_dir = os.path.join(reports_dir, year, month, day, time_folder)
     os.makedirs(dated_dir, exist_ok=True)
     
     # Create/update latest folder
@@ -133,16 +134,15 @@ def generate_trading_signals():
 
 def copy_outputs_to_report_folder(dated_dir, latest_dir, timestamp):
     """Copy prediction outputs to report folders"""
-    filename_base = generate_report_filename(timestamp)
     
-    # Files to copy
+    # Files to copy - use simple names since each report is in its own folder
     files_to_copy = {
-        'predictions_summary.json': f'{filename_base}_prediction.json',
-        'trading_signals.json': f'{filename_base}_signals.json',
-        'eth_prediction_overview.png': f'{filename_base}_overview.png',
-        'eth_1hour_prediction.png': f'{filename_base}_1hour.png',
-        'eth_technical_indicators.png': f'{filename_base}_indicators.png',
-        'eth_1m_data.csv': f'{filename_base}_data.csv'
+        'predictions_summary.json': 'prediction.json',
+        'trading_signals.json': 'signals.json',
+        'eth_prediction_overview.png': 'overview.png',
+        'eth_1hour_prediction.png': '1hour.png',
+        'eth_technical_indicators.png': 'indicators.png',
+        'eth_1m_data.csv': 'data.csv'
     }
     
     copied_files = []
@@ -169,11 +169,10 @@ def copy_outputs_to_report_folder(dated_dir, latest_dir, timestamp):
 
 def generate_comprehensive_report(dated_dir, timestamp, copied_files):
     """Generate comprehensive report with all components"""
-    filename_base = generate_report_filename(timestamp)
     
-    # Load prediction data
-    prediction_file = os.path.join(dated_dir, f'{filename_base}_prediction.json')
-    signals_file = os.path.join(dated_dir, f'{filename_base}_signals.json')
+    # Load prediction data (using simple filenames)
+    prediction_file = os.path.join(dated_dir, 'prediction.json')
+    signals_file = os.path.join(dated_dir, 'signals.json')
     
     try:
         with open(prediction_file, 'r') as f:
@@ -192,7 +191,7 @@ def generate_comprehensive_report(dated_dir, timestamp, copied_files):
         print("  ⚠ Warning: Could not load trading signals")
     
     # Generate comprehensive markdown report
-    report = generate_markdown_report(predictions, trading_signals, timestamp, filename_base, copied_files)
+    report = generate_markdown_report(predictions, trading_signals, timestamp, copied_files)
     
     # Save report
     report_file = os.path.join(dated_dir, 'README.md')
@@ -203,7 +202,7 @@ def generate_comprehensive_report(dated_dir, timestamp, copied_files):
     
     return report
 
-def generate_markdown_report(predictions, trading_signals, timestamp, filename_base, copied_files):
+def generate_markdown_report(predictions, trading_signals, timestamp, copied_files):
     """Generate the complete markdown report"""
     
     report = f"""# Ethereum Price Prediction Report
@@ -274,19 +273,19 @@ def generate_markdown_report(predictions, trading_signals, timestamp, filename_b
 
 Complete view of historical data, predictions from all models, and ensemble forecast with confidence intervals.
 
-![Prediction Overview]({filename_base}_overview.png)
+![Prediction Overview](overview.png)
 
 ### 1-Hour Focused Prediction
 
 Detailed near-term view with trend lines and prediction paths.
 
-![1-Hour Prediction]({filename_base}_1hour.png)
+![1-Hour Prediction](1hour.png)
 
 ### Technical Indicators
 
 Comprehensive analysis of all technical indicators.
 
-![Technical Indicators]({filename_base}_indicators.png)
+![Technical Indicators](indicators.png)
 
 ---
 
