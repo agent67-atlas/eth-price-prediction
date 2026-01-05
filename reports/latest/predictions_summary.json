@@ -1,0 +1,49 @@
+{
+  "generated_at": "2026-01-04T20:04:20.176247",
+  "current_price": 3167.61,
+  "last_data_timestamp": "2026-01-05T01:03:00",
+  "trend_analysis": {
+    "trend": "BULLISH",
+    "rsi": 50.32998565279775,
+    "rsi_signal": "NEUTRAL",
+    "macd": 3.7624428281205837,
+    "macd_signal": "BEARISH",
+    "bb_position": "MIDDLE",
+    "current_price": 3167.61,
+    "sma_20": 3164.977,
+    "bb_upper": 3174.6953929794918,
+    "bb_lower": 3155.258607020508
+  },
+  "model_scores": {
+    "linear": 0.6843970116174727,
+    "polynomial": 0.7519057577316052,
+    "ml_features": 0.9854505141285288
+  },
+  "model_weights": {
+    "linear": 0.28260393669609785,
+    "polynomial": 0.31047991670393366,
+    "ml_features": 0.4069161465999685
+  },
+  "predictions": {
+    "15m": {
+      "price": 3170.970836769835,
+      "change_pct": 0.10610008081282096,
+      "timestamp": "2026-01-05T01:18:00"
+    },
+    "30m": {
+      "price": 3175.4437512316745,
+      "change_pct": 0.24730794610683393,
+      "timestamp": "2026-01-05T01:33:00"
+    },
+    "60m": {
+      "price": 3185.7269571495553,
+      "change_pct": 0.5719440571773315,
+      "timestamp": "2026-01-05T02:03:00"
+    },
+    "120m": {
+      "price": 3211.642876962117,
+      "change_pct": 1.390097801248169,
+      "timestamp": "2026-01-05T03:03:00"
+    }
+  }
+}

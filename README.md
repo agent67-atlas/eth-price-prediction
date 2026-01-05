@@ -219,6 +219,23 @@ python -m pytest --cov=src tests/
 - **[MODEL_VALIDATION.md](docs/MODEL_VALIDATION.md)**: Validation principles and metrics
 - **[API_REFERENCE.md](docs/API_REFERENCE.md)**: Code documentation and API reference
 
+## 🤖 Automated Prediction Scheduling
+
+This repository is equipped with a fully automated prediction system that generates and commits reports every 4 hours. This provides a continuous, real-time track record of the model's performance.
+
+### How It Works
+
+- **GitHub Actions**: A pre-configured workflow runs on a schedule (`0 */4 * * *`).
+- **Report Generation**: The `src/generate_report.py` script is executed.
+- **Commits**: New reports are automatically committed to the `reports/` directory.
+
+### Report Structure
+
+- **Archive**: All historical reports are stored in `reports/YYYY/MM/DD/`.
+- **Latest**: The most recent report is always available in `reports/latest/`.
+
+For more details on setup and management, see the [**Automation Documentation**](docs/AUTOMATION.md).
+
 ## 🤝 Contributing
 
 Contributions are welcome! Areas for improvement:
