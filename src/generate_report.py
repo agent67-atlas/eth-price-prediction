@@ -4,12 +4,12 @@ Automated Report Generation Script
 Generates prediction reports for scheduled tasks
 """
 
-import sys
 import os
-import json
+import sys
+import subprocess
 import shutil
 from datetime import datetime, timezone
-import pandas as pd
+import json
 
 # Add src directory to path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -45,32 +45,34 @@ def run_prediction_pipeline():
     print("=" * 70)
     print(f"\nGeneration Time: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}\n")
     
+    src_dir = os.path.dirname(os.path.abspath(__file__))
+    
     # Step 1: Fetch Data
     print("Step 1/3: Fetching latest market data...")
-    try:
-        import fetch_data
-        print("✓ Data fetched successfully\n")
-    except Exception as e:
-        print(f"✗ Error fetching data: {e}")
+    result = subprocess.run([sys.executable, os.path.join(src_dir, 'fetch_data.py')], 
+                          capture_output=True, text=True)
+    if result.returncode != 0:
+        print(f"✗ Error fetching data: {result.stderr}")
         return False
+    print("✓ Data fetched successfully\n")
     
     # Step 2: Generate Predictions
     print("Step 2/3: Generating predictions...")
-    try:
-        import predict
-        print("✓ Predictions generated successfully\n")
-    except Exception as e:
-        print(f"✗ Error generating predictions: {e}")
+    result = subprocess.run([sys.executable, os.path.join(src_dir, 'predict.py')], 
+                          capture_output=True, text=True)
+    if result.returncode != 0:
+        print(f"✗ Error generating predictions: {result.stderr}")
         return False
+    print("✓ Predictions generated successfully\n")
     
     # Step 3: Create Visualizations
     print("Step 3/3: Creating visualizations...")
-    try:
-        import visualize
-        print("✓ Visualizations created successfully\n")
-    except Exception as e:
-        print(f"✗ Error creating visualizations: {e}")
+    result = subprocess.run([sys.executable, os.path.join(src_dir, 'visualize.py')], 
+                          capture_output=True, text=True)
+    if result.returncode != 0:
+        print(f"✗ Error creating visualizations: {result.stderr}")
         return False
+    print("✓ Visualizations created successfully\n")
     
     return True
 

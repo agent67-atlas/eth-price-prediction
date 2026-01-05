@@ -47,10 +47,13 @@ data/predictions/*.json
 # Keep .gitkeep files
 !.gitkeep
 
-# Output files
+# Output files (but allow reports)
 *.png
 *.jpg
 *.pdf
+
+# Exception: Allow PNG files in reports
+!reports/**/*.png
 
 # Logs
 *.log

@@ -5,7 +5,7 @@ A professional-grade, short-term cryptocurrency price prediction system using en
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## 🎯 Key Features
+## Key Features
 
 - **Multi-Model Ensemble**: Combines Linear Regression, Polynomial Regression, and Random Forest ML models
 - **High Accuracy**: Achieves R² scores up to 0.98+ on recent data
@@ -15,7 +15,7 @@ A professional-grade, short-term cryptocurrency price prediction system using en
 - **Model Validation**: Built-in backtesting, cross-validation, and performance metrics
 - **Self-Correcting**: Continuous model evaluation and adaptive weighting
 
-## 📊 Current Performance
+## Current Performance
 
 | Model | R² Score | Weight in Ensemble |
 |-------|----------|-------------------|
@@ -23,7 +23,7 @@ A professional-grade, short-term cryptocurrency price prediction system using en
 | Polynomial Regression | 0.7519 | 31.05% |
 | Random Forest (ML) | 0.9855 | 40.69% |
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -82,7 +82,7 @@ Model Performance:
   MAE: $1.83
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 eth-price-prediction/
@@ -149,7 +149,7 @@ We track multiple metrics to ensure model reliability:
 
 See [MODEL_VALIDATION.md](docs/MODEL_VALIDATION.md) for detailed validation procedures.
 
-## 📈 Technical Indicators
+## Technical Indicators
 
 The system calculates and uses the following indicators:
 
@@ -163,7 +163,7 @@ The system calculates and uses the following indicators:
 | **Volume Ratio** | Confirmation | High volume confirms price moves |
 | **Momentum (10)** | Rate of change | Positive = accelerating upward |
 
-## 🔧 Configuration
+## Configuration
 
 Edit `src/config.py` to customize:
 
@@ -188,7 +188,7 @@ BACKTEST_PERIODS = 100      # Periods to backtest
 CV_FOLDS = 5                # Cross-validation folds
 ```
 
-## 📊 Visualization Examples
+## Visualization Examples
 
 The system generates three types of charts:
 
@@ -213,13 +213,13 @@ python -m pytest tests/test_models.py
 python -m pytest --cov=src tests/
 ```
 
-## 📚 Documentation
+## Documentation
 
 - **[METHODOLOGY.md](docs/METHODOLOGY.md)**: Comprehensive data science methodology
 - **[MODEL_VALIDATION.md](docs/MODEL_VALIDATION.md)**: Validation principles and metrics
 - **[API_REFERENCE.md](docs/API_REFERENCE.md)**: Code documentation and API reference
 
-## 🤖 Automated Prediction Scheduling
+## Automated Prediction Scheduling
 
 This repository is equipped with a fully automated prediction system that generates and commits reports every 4 hours. This provides a continuous, real-time track record of the model's performance.
 
@@ -236,7 +236,7 @@ This repository is equipped with a fully automated prediction system that genera
 
 For more details on setup and management, see the [**Automation Documentation**](docs/AUTOMATION.md).
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Areas for improvement:
 
