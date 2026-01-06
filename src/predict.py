@@ -385,3 +385,17 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+    # FAIL-SAFE: Verify the JSON file was created correctly
+    json_path = os.path.join(BASE_DIR, 'predictions_summary.json')
+    if not os.path.exists(json_path):
+        raise FileNotFoundError(f"CRITICAL: predictions_summary.json was not created at {json_path}")
+    
+    with open(json_path, 'r') as f:
+        verify_data = json.load(f)
+    
+    if '4h' not in verify_data.get('predictions', {}):
+        raise KeyError(f"CRITICAL: predictions_summary.json does not contain '4h' key. Keys found: {list(verify_data.get('predictions', {}).keys())}")
+    
+    print("\n✓ VERIFICATION PASSED: predictions_summary.json contains 4h/8h/24h/48h predictions")
+
