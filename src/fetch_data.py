@@ -1,9 +1,10 @@
-import sys
 #!/usr/bin/env python3
 """
 Fetch Ethereum price data from multiple sources for swing trading (4-hour timeframe)
 """
 
+import sys
+import os
 import requests
 import json
 import time
@@ -180,7 +181,7 @@ def main():
         if df_1h_temp is not None:
             # Resample hourly data to 4-hour candles
             df_1h_temp.set_index('timestamp', inplace=True)
-            df_4h = df_1h_temp.resample('4H').agg({
+            df_4h = df_1h_temp.resample('4h').agg({
                 'open': 'first',
                 'high': 'max',
                 'low': 'min',
