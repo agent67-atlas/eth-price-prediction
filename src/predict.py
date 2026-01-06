@@ -259,7 +259,12 @@ def main():
     print("=== Ethereum Swing Trading Price Prediction (4-Hour Timeframe) ===")
     
     # Load 4-hour data
-    df_4h = pd.read_csv(os.path.join(BASE_DIR, 'eth_4h_data.csv'))
+    print("DEBUG: About to load eth_4h_data.csv...")
+    csv_path = os.path.join(BASE_DIR, 'eth_4h_data.csv')
+    print(f"DEBUG: CSV path = {csv_path}")
+    print(f"DEBUG: File exists? {os.path.exists(csv_path)}")
+    df_4h = pd.read_csv(csv_path)
+    print("DEBUG: CSV loaded successfully!")
     df_4h['timestamp'] = pd.to_datetime(df_4h['timestamp'])
     
     print(f"Loaded {len(df_4h)} 4-hour candles")
