@@ -5,9 +5,7 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import numpy as np
 from datetime import datetime, timedelta
-
-# Configuration
-BASE_DIR = os.path.join(os.path.dirname(__file__), '..', 'reports', 'latest')
+from config import BASE_DIR
 
 def plot_predictions_overview():
     """
