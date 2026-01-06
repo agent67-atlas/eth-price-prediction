@@ -86,8 +86,8 @@ def send_slack_notification(predictions_file, signals_file, report_url):
     
     # GitHub raw URLs for chart images
     repo_url = "https://raw.githubusercontent.com/Madgeniusblink/eth-price-prediction/main/reports/latest"
-    overview_img = f"{repo_url}/eth_prediction_overview.png"
-    hour_img = f"{repo_url}/eth_4hour_prediction.png"
+    overview_img = f"{repo_url}/eth_predictions_overview.png"
+    hour_img = f"{repo_url}/eth_48hour_prediction.png"
     indicators_img = f"{repo_url}/eth_technical_indicators.png"
     
     # Build the message payload
