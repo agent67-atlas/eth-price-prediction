@@ -252,6 +252,10 @@ def analyze_trend(df):
     }
 
 def main():
+    print("\n" + "="*70)
+    print("DEBUG: main() function started!")
+    print("DEBUG: This is the 4-HOUR timeframe version")
+    print("="*70 + "\n")
     print("=== Ethereum Swing Trading Price Prediction (4-Hour Timeframe) ===")
     
     # Load 4-hour data
