@@ -126,7 +126,7 @@ Current Price: ${summary['current_price']:.2f}
     ax3.axis('off')
     
     table_data = []
-    for time_label in ['15m', '30m', '60m', '120m']:
+    for time_label in ['240m', '480m', '1440m', '2880m']:
         pred_data = summary['predictions'][time_label]
         table_data.append([
             time_label,
