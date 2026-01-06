@@ -159,6 +159,14 @@ def main():
     
     print("\n=== Data Collection Complete ===")
     
+    # Validate that critical data files were created
+    critical_file = os.path.join(BASE_DIR, 'eth_4h_data.csv')
+    if not os.path.exists(critical_file) or df_4h is None:
+        print(f"\n✗ CRITICAL ERROR: Required 4-hour data file was not created!")
+        print(f"  This usually means API access is blocked or rate limited.")
+        print(f"  The prediction system cannot run without 4-hour data.")
+        sys.exit(1)
+    
     # Save metadata
     metadata = {
         'fetch_time': datetime.now().isoformat(),
