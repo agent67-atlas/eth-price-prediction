@@ -1,31 +1,31 @@
 {
   "neutral_low_volatility": {
     "ensemble": {
-      "total_predictions": 4,
-      "total_error_pct": 3.51951372961011,
+      "total_predictions": 8,
+      "total_error_pct": 7.03902745922022,
       "total_direction_correct": 0,
       "avg_error_pct": 0.8798784324025275,
       "directional_accuracy": 0.0
     },
     "linear": {
-      "total_predictions": 4,
-      "total_error_pct": 1.0276872781115924,
-      "total_direction_correct": 2,
+      "total_predictions": 8,
+      "total_error_pct": 2.055374556223185,
+      "total_direction_correct": 4,
       "avg_error_pct": 0.2569218195278981,
       "directional_accuracy": 50.0
     },
     "polynomial": {
-      "total_predictions": 4,
-      "total_error_pct": 9.832087702636798,
+      "total_predictions": 8,
+      "total_error_pct": 19.664175405273596,
       "total_direction_correct": 0,
       "avg_error_pct": 2.4580219256591995,
       "directional_accuracy": 0.0
     },
     "random_forest": {
-      "total_predictions": 4,
-      "total_error_pct": 0.11756810009333978,
+      "total_predictions": 8,
+      "total_error_pct": 0.23513620018667952,
       "total_direction_correct": 0,
-      "avg_error_pct": 0.029392025023334944,
+      "avg_error_pct": 0.02939202502333494,
       "directional_accuracy": 0.0
     }
   }
