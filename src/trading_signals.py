@@ -316,7 +316,7 @@ class TradingSignals:
             'stop_loss': entry_levels['stop_loss'],
             'target': entry_levels['target'],
             'risk_reward': entry_levels['risk_reward'],
-            'reasoning': self._generate_reasoning(signal, latest, trend, levels) + reasoning_suffix,
+            'reasoning': '. '.join(self._generate_reasoning(signal, latest, trend, levels)) + reasoning_suffix,
             'user_context': user_context
         }
     
