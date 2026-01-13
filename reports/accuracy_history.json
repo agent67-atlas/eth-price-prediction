@@ -2868,6 +2868,76 @@
         "polynomial": 0.2896580449448923,
         "ml_features": 0.37052677280617524
       },
+      "validated": true
+    },
+    {
+      "id": "2026-01-13T04:17:26.987240",
+      "prediction_time": "2026-01-13T04:17:26.987240",
+      "current_price": 3116.61,
+      "market_condition": "neutral_low_volatility",
+      "predictions": {
+        "15min": {
+          "timestamp": "2026-01-13T04:32:26.987240",
+          "ensemble_price": 3117.606966058075,
+          "models": {
+            "linear": 3119.6752898289838,
+            "polynomial": 3116.943236094798,
+            "random_forest": 3116.3281999999954
+          },
+          "weights": {
+            "linear": 0.3264183899822923,
+            "polynomial": 0.3027698480608046,
+            "ml_features": 0.3708117619569031
+          }
+        },
+        "30min": {
+          "timestamp": "2026-01-13T04:47:26.987240",
+          "ensemble_price": 3118.9730773959345,
+          "models": {
+            "linear": 3122.7000549054915,
+            "polynomial": 3118.194260243791,
+            "random_forest": 3116.3281999999954
+          },
+          "weights": {
+            "linear": 0.3264183899822923,
+            "polynomial": 0.3027698480608046,
+            "ml_features": 0.3708117619569031
+          }
+        },
+        "60min": {
+          "timestamp": "2026-01-13T05:17:26.987240",
+          "ensemble_price": 3121.369653027202,
+          "models": {
+            "linear": 3128.749585058507,
+            "polynomial": 3119.5877204620815,
+            "random_forest": 3116.3281999999954
+          },
+          "weights": {
+            "linear": 0.3264183899822923,
+            "polynomial": 0.3027698480608046,
+            "ml_features": 0.3708117619569031
+          }
+        },
+        "120min": {
+          "timestamp": "2026-01-13T06:17:26.987240",
+          "ensemble_price": 3124.820216111929,
+          "models": {
+            "linear": 3140.8486453645373,
+            "polynomial": 3117.940288579876,
+            "random_forest": 3116.3281999999954
+          },
+          "weights": {
+            "linear": 0.3264183899822923,
+            "polynomial": 0.3027698480608046,
+            "ml_features": 0.3708117619569031
+          }
+        }
+      },
+      "model_weights": {
+        "linear": 0.3264183899822923,
+        "polynomial": 0.3027698480608046,
+        "ml_features": 0.3708117619569031
+      },
       "validated": false
     }
   ],
@@ -7955,16 +8025,140 @@
           "direction_correct": true
         }
       }
+    },
+    {
+      "prediction_id": "2026-01-13T00:09:56.748623",
+      "prediction_time": "2026-01-13T00:09:56.748623",
+      "validation_time": "2026-01-13T04:17:26.976324",
+      "target_time": "2026-01-13T00:24:56.748623",
+      "horizon": "15min",
+      "actual_price": 3116.61,
+      "market_condition": "neutral_low_volatility",
+      "errors": {
+        "ensemble": {
+          "absolute": 21.295745429774342,
+          "percentage": 0.683298373225214,
+          "direction_correct": false
+        },
+        "linear": {
+          "absolute": 27.13830765076409,
+          "percentage": 0.8707636711286971,
+          "direction_correct": false
+        },
+        "polynomial": {
+          "absolute": 15.399672494630977,
+          "percentage": 0.4941161227946704,
+          "direction_correct": true
+        },
+        "random_forest": {
+          "absolute": 20.54668650326812,
+          "percentage": 0.6592639599843458,
+          "direction_correct": true
+        }
+      }
+    },
+    {
+      "prediction_id": "2026-01-13T00:09:56.748623",
+      "prediction_time": "2026-01-13T00:09:56.748623",
+      "validation_time": "2026-01-13T04:17:26.976324",
+      "target_time": "2026-01-13T00:39:56.748623",
+      "horizon": "30min",
+      "actual_price": 3116.61,
+      "market_condition": "neutral_low_volatility",
+      "errors": {
+        "ensemble": {
+          "absolute": 19.595672330102843,
+          "percentage": 0.6287495814395399,
+          "direction_correct": true
+        },
+        "linear": {
+          "absolute": 27.9444489648954,
+          "percentage": 0.8966296381291018,
+          "direction_correct": false
+        },
+        "polynomial": {
+          "absolute": 8.58469810775614,
+          "percentage": 0.2754498672517941,
+          "direction_correct": true
+        },
+        "random_forest": {
+          "absolute": 20.54668650326812,
+          "percentage": 0.6592639599843458,
+          "direction_correct": true
+        }
+      }
+    },
+    {
+      "prediction_id": "2026-01-13T00:09:56.748623",
+      "prediction_time": "2026-01-13T00:09:56.748623",
+      "validation_time": "2026-01-13T04:17:26.976324",
+      "target_time": "2026-01-13T01:09:56.748623",
+      "horizon": "60min",
+      "actual_price": 3116.61,
+      "market_condition": "neutral_low_volatility",
+      "errors": {
+        "ensemble": {
+          "absolute": 14.815827709352106,
+          "percentage": 0.47538279442574166,
+          "direction_correct": true
+        },
+        "linear": {
+          "absolute": 29.556731593158474,
+          "percentage": 0.9483615721299256,
+          "direction_correct": false
+        },
+        "polynomial": {
+          "absolute": 9.808447979121866,
+          "percentage": 0.31471528292349266,
+          "direction_correct": true
+        },
+        "random_forest": {
+          "absolute": 20.54668650326812,
+          "percentage": 0.6592639599843458,
+          "direction_correct": true
+        }
+      }
+    },
+    {
+      "prediction_id": "2026-01-13T00:09:56.748623",
+      "prediction_time": "2026-01-13T00:09:56.748623",
+      "validation_time": "2026-01-13T04:17:26.976324",
+      "target_time": "2026-01-13T02:09:56.748623",
+      "horizon": "120min",
+      "actual_price": 3116.61,
+      "market_condition": "neutral_low_volatility",
+      "errors": {
+        "ensemble": {
+          "absolute": 0.2626552177803205,
+          "percentage": 0.008427593371654475,
+          "direction_correct": true
+        },
+        "linear": {
+          "absolute": 32.78129684968417,
+          "percentage": 1.0518254401315585,
+          "direction_correct": false
+        },
+        "polynomial": {
+          "absolute": 65.64752940539302,
+          "percentage": 2.106376139632261,
+          "direction_correct": true
+        },
+        "random_forest": {
+          "absolute": 20.54668650326812,
+          "percentage": 0.6592639599843458,
+          "direction_correct": true
+        }
+      }
     }
   ],
   "summary": {
-    "total_predictions": 40,
-    "total_validations": 164,
-    "ensemble_avg_error_pct": 0.6313874115039173,
-    "linear_avg_error_pct": 0.5013279635570361,
-    "polynomial_avg_error_pct": 1.4296565449025909,
-    "random_forest_avg_error_pct": 0.4092164661683971,
-    "directional_accuracy": 39.02439024390244,
-    "last_updated": "2026-01-13T00:09:56.738775"
+    "total_predictions": 41,
+    "total_validations": 168,
+    "ensemble_avg_error_pct": 0.6270440108875273,
+    "linear_avg_error_pct": 0.5118176568147215,
+    "polynomial_avg_error_pct": 1.4146091117656376,
+    "random_forest_avg_error_pct": 0.4151699779259197,
+    "directional_accuracy": 39.88095238095239,
+    "last_updated": "2026-01-13T04:17:26.977167"
   }
 }
