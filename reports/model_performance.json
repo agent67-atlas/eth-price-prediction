@@ -58,5 +58,35 @@
       "avg_error_pct": 1.2497886662736186,
       "directional_accuracy": 0.0
     }
+  },
+  "bull_low_volatility": {
+    "ensemble": {
+      "total_predictions": 4,
+      "total_error_pct": 26.52449913214216,
+      "total_direction_correct": 0,
+      "avg_error_pct": 6.63112478303554,
+      "directional_accuracy": 0.0
+    },
+    "linear": {
+      "total_predictions": 4,
+      "total_error_pct": 21.537687906652526,
+      "total_direction_correct": 0,
+      "avg_error_pct": 5.384421976663131,
+      "directional_accuracy": 0.0
+    },
+    "polynomial": {
+      "total_predictions": 4,
+      "total_error_pct": 51.870451017709634,
+      "total_direction_correct": 0,
+      "avg_error_pct": 12.967612754427408,
+      "directional_accuracy": 0.0
+    },
+    "random_forest": {
+      "total_predictions": 4,
+      "total_error_pct": 6.165358472064388,
+      "total_direction_correct": 4,
+      "avg_error_pct": 1.541339618016097,
+      "directional_accuracy": 100.0
+    }
   }
 }
