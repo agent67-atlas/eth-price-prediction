@@ -91,11 +91,11 @@
   },
   "unknown": {
     "ensemble": {
-      "total_predictions": 16,
-      "total_error_pct": 909.1698933634684,
+      "total_predictions": 20,
+      "total_error_pct": 1140.5403186567205,
       "total_direction_correct": 8,
-      "avg_error_pct": 56.823118335216776,
-      "directional_accuracy": 50.0
+      "avg_error_pct": 57.02701593283602,
+      "directional_accuracy": 40.0
     }
   }
 }
